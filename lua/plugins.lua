@@ -13,10 +13,11 @@ return require('packer').startup(function(use)
   	requires = { {'nvim-lua/plenary.nvim'} }
 }
 
-use({ 'rose-pine/neovim', as = 'rose-pine' })
+-- treesitter
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 use('nvim-treesitter/playground')
 
+-- lsp
 use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v2.x',
@@ -38,18 +39,20 @@ use {
   }
 }
 
+-- nerdtree
 use("scrooloose/nerdtree")
 
+-- autopairs
 use {
 	"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
 }
 
+-- statusline
 use('vim-airline/vim-airline')
 use('vim-airline/vim-airline-themes')
 
-use { "catppuccin/nvim", as = "catppuccin" }
-
+-- autosave
 use({
 	"Pocco81/auto-save.nvim",
 	config = function()
@@ -60,9 +63,11 @@ use({
 	end,
 })
 
+-- copilot
 use('github/copilot.vim')
 
-vim.cmd.colorscheme "catppuccin"
+-- colorscheme
+use { "catppuccin/nvim", as = "catppuccin" }
 
 vim.cmd([[
     let g:airline_theme = 'catppuccin'

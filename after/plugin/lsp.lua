@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero').preset({})
+local util = require('lspconfig.util')
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
@@ -25,3 +26,17 @@ cmp.setup({
     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
   }
 })
+
+local function prefix_bun(cmd)
+    return vim.list_extend({
+        "bun",
+        "run",
+        "--bun",
+    }, cmd)
+end
+
+util.on_setup = util.add_hook_before(util.on_setup, function(config, user_config)
+    if config.cmd then
+        config.cmd = prefix_bun(config.cmd)
+    end
+end)
