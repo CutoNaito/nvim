@@ -39,9 +39,6 @@ use {
   }
 }
 
--- nerdtree
-use("scrooloose/nerdtree")
-
 -- autopairs
 use {
 	"windwp/nvim-autopairs",
@@ -71,9 +68,6 @@ use { "catppuccin/nvim", as = "catppuccin" }
 
 vim.cmd([[
     let g:airline_theme = 'catppuccin'
-    autocmd VimEnter * NERDTree | wincmd p
-    let NERDTreeShowHidden = 1
-    nnoremap <leader>n :NERDTreeFocus<CR>
 ]])
 
 end)
