@@ -6,4 +6,5 @@ vim.cmd([[
     map <leader>gt :bnext<CR>
     map <leader>gT :bprev<CR>
     map <leader>bd :bd<CR>
+    map <leader>mk <Esc> :mak<CR>
 ]])

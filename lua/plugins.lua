@@ -17,6 +17,12 @@ return require('packer').startup(function(use)
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 use('nvim-treesitter/playground')
 
+-- markdown preview
+use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+})
+
 -- lsp
 use {
   'VonHeikemen/lsp-zero.nvim',
