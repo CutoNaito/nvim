@@ -4,14 +4,15 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
 
-  use {
-  	'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	-- or                            , branch = '0.1.x',
-  	requires = { {'nvim-lua/plenary.nvim'} }
+use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.4',
+-- or                            , branch = '0.1.x',
+  requires = { {'nvim-lua/plenary.nvim'} }
 }
+
+-- Packer can manage itself
+use 'wbthomason/packer.nvim'
 
 -- treesitter
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -70,10 +71,10 @@ use({
 use('github/copilot.vim')
 
 -- colorscheme
-use { "catppuccin/nvim", as = "catppuccin" }
+use {'rebelot/kanagawa.nvim', as = 'kanagawa'}
 
 vim.cmd([[
-    let g:airline_theme = 'catppuccin'
+    let g:airline_theme = 'owo'
 ]])
 
 end)
